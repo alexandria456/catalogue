@@ -2,16 +2,15 @@
 
 @section('content')
     <div class="container">
-        @foreach($categories as $category)
-            <ul><li>{{$category->title}}
-                    @foreach($category->children as $childrens)
-                        <ul><li>{{$childrens->title}}
-                                @foreach($childrens->children as $children)
-                                    <ul><li>{{$children->title}}</li></ul>
-                                @endforeach
-                            </li></uL>
-                    @endforeach
-                </li></ul>
-        @endforeach
+        <ul class="list-group">
+            @foreach($categories as $category)
+                <li>
+                    {{ $category->title }}
+                    @if(($category->children))
+                        @include('.categories._index',['children' => $category->children])
+                    @endif
+                </li>
+            @endforeach
+        </ul>
     </div>
 @endsection
