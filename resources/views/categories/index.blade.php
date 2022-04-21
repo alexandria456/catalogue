@@ -4,12 +4,13 @@
     <div class="container">
         <ul class="list-group">
             @foreach($categories as $category)
-                <li>
+                <li class="list-group-item">
                     {{ $category->title }}
-                    @if(($category->children))
+                    @if(count($category->children))
                         @include('.categories._index',['children' => $category->children])
                     @endif
                 </li>
+                @break
             @endforeach
         </ul>
     </div>
