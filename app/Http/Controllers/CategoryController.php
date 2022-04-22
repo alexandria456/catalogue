@@ -15,12 +15,12 @@ class CategoryController extends Controller
 
 
 
-        return view('categories.index', compact('categories'), compact('descendants'));
+        return view('categories.index', compact('categories'));
     }
 
     public function show()
     {
-        //олучение плоского списка
+        //получение плоского списка
         $categories = Category::all()->toFlatTree();
         return view('categories.show', compact('categories'));
     }
