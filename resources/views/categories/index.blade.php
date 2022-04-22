@@ -7,7 +7,7 @@
                 <li class="list-group-item">
                     {{ $category->title }}
                     @if(count($category->children))
-                        @include('.categories._index',['children' => $category->children])
+                        @include('categories.getchild',['children' => $category->children])
                     @endif
                 </li>
                 @break
