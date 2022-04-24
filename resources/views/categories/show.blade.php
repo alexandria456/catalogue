@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="container">
-        @foreach($categories as $i => $category)
+        @foreach($categoriesflat as $i => $category)
             <small>{{ $category->count()}}</small><br>
-            {{ $category->title }}
+            {{ $category->title }}<br>
+
         @endforeach
     </div>
 @endsection

@@ -21,8 +21,8 @@ class CategoryController extends Controller
     public function show()
     {
         //получение плоского списка
-        $categories = Category::all()->toFlatTree();
-        return view('categories.show', compact('categories'));
+        $categoriesflat = Category::all()->toFlatTree();
+        return view('categories.show', compact('categoriesflat'));
     }
 
 }
